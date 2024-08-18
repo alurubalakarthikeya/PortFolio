@@ -8,29 +8,26 @@
   <link rel="shortcut icon" type="image/x-icon" href="photos/AND IT logo.png" />
   <link rel="stylesheet" href="styles.css">
   <link rel="mask-icon" type="image/x-icon" href="photos/And IT logo.jpg" color="#111" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,100;1,300&display=swap" rel="stylesheet">
   <title>Home | Karthikeya</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet"/>
 </head>
 <body translate="no" >
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet"/>
-<!--Loader animation-->
-<div class="loader-container">
-  <div class="pulsing-circle"></div>
+ <!--Loader animation-->
+ <div id="loader" class="loader-container">
+  <div class="pulsing-circle">
+    <div class="pulsing-circle-dot"></div>
+  </div>
 </div>
 <!--Loader animation-->
 <!-- START OF THE NAV -->
 <nav id="navbar" class="nav">
   <div class="logo">
-    <h4>Karthikeya.</h4>
+    <h3>Karthikeya.</h3>
   </div>
   <div class="menu">
     <i style="font-size:10px" id="menuBar" class="fa" onclick="ToggleMenu()">&#xf0c9;</i>
@@ -80,6 +77,8 @@
       </div>
     </section>
     <div class="navigator">
+      <br>
+      <i class="fa-solid fa-angle-up"></i>
     </div>
   </div>
 <!-- END OF WELCOME SECTION -->
@@ -173,7 +172,7 @@
 </section>
 <!-- END OF PROJECTS SECTION -->
 <!-- START OF CONTACT SECTION -->
-  <section id="services" class="contact-section fadeInUp-animation">
+  <section id="services" class="contact-section">
     <div class="contact-section-header">
       <h1 style="font-size: 5vh;"><span class="heading">Service</span> Details</h1>
       <p style="color: white;">Prefer LinkedIn for Contact</p>

@@ -23,3 +23,16 @@ var typed = new Typed(".text", {
   looped: true
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+  window.addEventListener("load", function() {
+    // Hide the loader
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+    
+    // Show the content
+    const content = document.querySelector('.content');
+    content.style.display = 'block';
+  });
+});
+
+

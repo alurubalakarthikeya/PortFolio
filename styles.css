@@ -53,11 +53,12 @@ body {
   color: var(--main-white);
   background-color: black;
   text-align: justify;
+  overflow-x: none;
 }
 
 h1,
 h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   text-align: center;
 }
@@ -91,7 +92,6 @@ img {
   align-items: center;
   position: fixed;
   top: 0;
-  right: 0;
   background: var(--main-black);
   width: 100%;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
@@ -99,9 +99,14 @@ img {
   text-decoration: none;
 }
 
+.logo {
+  margin-left: 20px;
+  flex: 1;
+}
+
 .nav-list {
   display: flex;
-  margin: 0 1.6rem;
+  margin: 0;
   opacity: 1;
 }
 
@@ -123,7 +128,12 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000000;
 }
 
 .pulsing-circle {
@@ -133,7 +143,22 @@ img {
   box-shadow: 0.5px 0.5px 16.5px -0.5px var(--main-blue);
   border-radius: 50%;
   animation: pulse 2.5s infinite;
-  z-index: 10000;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pulsing-circle-dot {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-black);
+  box-shadow: 0.5px 0.5px 16.5px -0.5px var(--main-blue);
+  border-radius: 50%;
+  z-index: 100000000;
 }
 
 @keyframes pulse {
@@ -141,9 +166,18 @@ img {
       transform: scale(1);
       opacity: 1;
   }
-  50% {
-      transform: scale(1.5);
+  25% {
+      transform: scale(1.4);
       opacity: 0.5;
+  }
+  50%{
+    transform: scale(1.7);
+    opacity: 1;
+  }
+
+  75% {
+    transform: scale(1.5);
+    opacity: 0.5;
   }
 }
 
@@ -184,7 +218,6 @@ img {
   height: 90vh;
   background-color: #000;
   background-image: url(photos/home.jpg);
-  filter: brightness(90%);
 }
 
 p {
@@ -202,13 +235,6 @@ ul {
   font-size: 2vh;
 }
 
-.welcome-section background-img {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-}
 
 .welcome-section > p {
   font-size: 3rem;
@@ -552,19 +578,24 @@ button > img {
   font-size: 6rem;
 }
 
+.contact-links {
+  font-size: 3vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 28.75em) {
   .contact-section-header > h2 {
     font-size: 4rem;
   }
   .contact-links {
-    margin-top: 20vh;
     font-size: 3vh;
-    display: flex;
+    display: block;
     justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
   }
 }
 
@@ -574,8 +605,8 @@ button > img {
 }
 
 .contact-links {
-  display: flex;
-  justify-content: center;
+  display: block;
+  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
   float: left;
@@ -631,7 +662,6 @@ footer i {
   .menu {
     justify-content: flex-end;
   }
-
   .logo {
     justify-content: flex-start;
   }
@@ -641,40 +671,6 @@ footer i {
   }
 }
 
-.div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-#container {
-  width: 200px;
-  height: 200px;
-}
-
-@keyframes animation {
-  0% {
-    stroke-dasharray: 1 98;
-    stroke-dashoffset: -105;
-  }
-  50% {
-    stroke-dasharray: 80 10;
-    stroke-dashoffset: -160;
-  }
-  100% {
-    stroke-dasharray: 1 98;
-    stroke-dashoffset: -300;
-  }
-}
-
-#spinner {
-  transform-origin: center;
-  animation-name: animation;
-  animation-duration: 1.2s;
-  animation-timing-function: cubic-bezier;
-  animation-iteration-count: infinite;
-}
 
 .navigator {
   background-color: var(--main-blue);
@@ -684,7 +680,7 @@ footer i {
   width: 25px; /* Add width if necessary */
   height: 120px; /* Ensure height is non-zero */
   border-radius: 20px;
-  z-index: 10000; /* Ensure this is high enough */
+  z-index: 100; /* Ensure this is high enough */
   display: inline-flex; /* Ensure the element is displayed */
   flex-direction: column;
   gap: 15px;
@@ -693,10 +689,6 @@ footer i {
   box-shadow: 0px 7px 18px var(--main-blue);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
 
 .logo:hover {
   color: var(--main-blue);
