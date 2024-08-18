@@ -119,6 +119,34 @@ img {
   transform: translateX(-9px);
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pulsing-circle {
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-blue);
+  box-shadow: 0.5px 0.5px 16.5px -0.5px var(--main-blue);
+  border-radius: 50%;
+  animation: pulse 2.5s infinite;
+  z-index: 10000;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.5);
+      opacity: 0.5;
+  }
+}
+
 /* Welcome section */
 @keyframes fadeInUp {
   0% {
@@ -555,6 +583,7 @@ button > img {
 
 .contact-details {
   font-size: 2.4rem;
+  display: block;
   transition: transform 0.5s ease-out;
 }
 
@@ -610,6 +639,41 @@ footer i {
   .nav-list {
     margin: 0 2.5rem;
   }
+}
+
+.div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#container {
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes animation {
+  0% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -105;
+  }
+  50% {
+    stroke-dasharray: 80 10;
+    stroke-dashoffset: -160;
+  }
+  100% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -300;
+  }
+}
+
+#spinner {
+  transform-origin: center;
+  animation-name: animation;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier;
+  animation-iteration-count: infinite;
 }
 
 .navigator {
