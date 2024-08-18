@@ -129,6 +129,7 @@ img {
   justify-content: center;
   align-items: center;
   position: fixed;
+  background-color: var(--main-black);
   top: 0;
   left: 0;
   width: 100%;
