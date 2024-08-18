@@ -24,26 +24,12 @@ var typed = new Typed(".text", {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-  const loader = document.getElementById('loader');
-  const content = document.querySelector('.content');
-  const welcomeSection = document.querySelector('.welcome-section');
-
-  // IntersectionObserver to detect when .welcome-section is in view
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Hide the loader and show the content
-        loader.style.display = 'none';
-        content.style.display = 'block';
-        // Stop observing
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.1 });
-
-  // Start observing the .welcome-section
-  observer.observe(welcomeSection);
+  window.addEventListener("load", function() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+    const content = document.querySelector('.content');
+    content.style.display = 'block';
+  });
 });
-
 
 
