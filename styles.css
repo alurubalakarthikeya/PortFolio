@@ -1,0 +1,639 @@
+:root {
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #2C73D2;
+  --main-gray: #272f37;
+  --main-black: #0c0303;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 61.25em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 32.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+  background-color: black;
+  text-align: justify;
+}
+
+h1,
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5vh;
+}
+
+h2 {
+  font-size: 3vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--main-black);
+  width: 100%;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0 1.6rem;
+  opacity: 1;
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2rem;
+  padding: 1.5rem;
+  z-index: 1;
+  transition: transform ease-out 0.9s;
+}
+
+.nav-list a:hover {
+  background: var(--main-blue);
+  color: var(--main-white);
+  transform: translateX(-9px);
+}
+
+/* Welcome section */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  99% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 2s fadeInUp;
+}
+
+.pro {
+  height: 125px;
+  width: 130px;
+  border-radius: 80px;
+  border: var(--main-blue) solid 5px;
+  margin: 50px 0;
+  transition: 0.3s ease-out;
+}
+
+.pro:hover {
+  border: var(--main-white) solid 3px;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background-color: #000;
+  background-image: url(photos/home.jpg);
+  filter: brightness(90%);
+}
+
+p {
+  font-size: 2vh;
+}
+
+.para {
+  text-align: justify;
+  align-items: center;
+  margin: 10px 40px;
+
+}
+
+ul {
+  font-size: 2vh;
+}
+
+.welcome-section background-img {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+}
+
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-white);
+}
+/*  section */
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--main-white);
+  filter: brightness(90%);
+}
+.heading {
+  color: var(--main-red);
+  transition: 0.6s ease-out;
+}
+.heading:hover {
+  color: var(--main-white);
+}
+
+.page-buttons {
+  color: var(--main-blue);
+  background-color: var(--main-white);
+  border: var(--main-white) solid 3px;
+  border-radius: 10px;
+  font-size: 2vh;
+  padding: 7px;
+  margin-bottom: 10px;
+  transition: 1s ease-in-out;
+}
+
+.page-buttons:hover {
+  color: var(--main-white);
+  background-color: var(--main-blue);
+  border: var(--main-blue) solid 3px;
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 4rem auto;
+  color: var(--main-blue);
+  transition: 1s ease-in;
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+#buttons {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.skill {
+  margin: 20px;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  background-color: var(--main-blue);
+  align-items: center;
+  border: var(--main-blue) solid 3px;
+  border-radius: 20px;
+  box-shadow: var(--main-blue) 0px 22px 99px 4px;
+  color: var(--main-white);
+  transition: ease-out 0.9s;
+}
+
+.skill:hover {
+  background-color: var(--main-gray);
+  border-radius: 25px;
+}
+
+button > img {
+  height: 100px;
+  width: 100%;
+
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  background: var(--main-blue);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.code {
+  color: var(--main-blue);
+  transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+  color: var(--main-white);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 2vh;
+  padding: 15px 10px;
+  background-color: var(--main-blue);
+  transition: 0.7s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.project-title:hover {
+  border-bottom: 4px solid var(--main-white);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.grid-a {
+  border: var(--main-blue) solid 3px;
+}
+
+.grid-b {
+  border: var(--main-blue) solid 3px;
+}
+
+.grid-c {
+  border: var(--main-blue) solid 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: var(--main-blue);
+  transition: 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background: var(--main-black);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(5px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--main-white) ;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -15px;
+  background-color: var(--main-blue);
+  border: 4px solid var(--main-black);
+  box-shadow: var(--main-blue) 0px 22px 70px 4px;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 30;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--main-black);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 30;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -20px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: var(--main-blue);
+  color: var(--main-white);
+  position: relative;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.content > .hehe {
+  text-align: justify;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+/* about section */
+#about {
+  background-color: var(--main-black);
+  color: var(--main-white);
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background: url(photos/foot.avif);
+}
+
+.span {
+  color: white;
+  transition: 0.6s ease-in-out;
+}
+
+.span:hover {
+  color: var(--main-red);
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+  .contact-links {
+    margin-top: 20vh;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+  color: var(--main-red);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  transition: transform 0.5s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateX(20px);
+  color: #2C73D2;
+}
+/* Footer */
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
+}
+
+footer > p {
+  margin: 2rem;
+}
+
+footer i {
+  vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 750px){
+  .nav-list{
+    display: none;
+  }
+  .menu {
+    display: block;
+    padding: 20px;
+  }
+  .menu {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+
+  .nav-list {
+    margin: 0 2.5rem;
+  }
+}
+
+.navigator {
+  background-color: var(--main-blue);
+  position: fixed;
+  top: 80%; /* Ensure this is within the viewport height */
+  right: 5%; /* Avoid using float with fixed position */
+  width: 25px; /* Add width if necessary */
+  height: 120px; /* Ensure height is non-zero */
+  border-radius: 20px;
+  z-index: 10000; /* Ensure this is high enough */
+  display: inline-flex; /* Ensure the element is displayed */
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 0px 7px 18px var(--main-blue);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  color: var(--main-blue);
+}
