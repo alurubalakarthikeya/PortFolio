@@ -71,6 +71,10 @@ h2 {
   font-size: 3vh;
 }
 
+h3 {
+  font-size: 3vh;
+}
+
 ul {
   list-style: none;
 }
@@ -100,7 +104,7 @@ img {
 }
 
 .logo {
-  margin-left: 20px;
+  margin-left: 10px;
   flex: 1;
 }
 
@@ -152,7 +156,7 @@ img {
 
 .pulsing-circle-dot {
   width: 40px;
-  height: 40px;
+  height: 39px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,7 +222,7 @@ img {
   width: 100%;
   height: 90vh;
   background-color: #000;
-  background-image: url(photos/home.jpg);
+  background-image: url(photos/home.png);
 }
 
 p {
@@ -563,7 +567,7 @@ button > img {
   width: 100%;
   height: 80vh;
   padding: 0 2rem;
-  background: url(photos/foot.avif);
+  background: url(photos/footer.png);
 }
 
 .span {
@@ -581,12 +585,7 @@ button > img {
 
 .contact-links {
   font-size: 3vh;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  max-width: 980px;
-  margin-top: 4rem;
-  flex-wrap: wrap;
 }
 
 @media (max-width: 28.75em) {

@@ -17,7 +17,7 @@ function ToggleMenu() {
 }
 
 var typed = new Typed(".text", {
-  strings: ["Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer"],
+  strings: ["Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer",],
   typeSpeed: 150,
   backSpeed: 150,
   looped: true
