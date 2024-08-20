@@ -1,31 +1,67 @@
-const menuBar = document.getElementById('menuBar');
-const menuItems = document.getElementById('menu-items');
-const nav = document.getElementById('navbar'); // Use getElementById for a single element
+document.addEventListener('DOMContentLoaded', function() {
+  // Get elements
+  const menuBar = document.getElementById('menuBar');
+  const closeMenu = document.getElementById('closeMenu');
+  const menuItems = document.getElementById('menu-items');
+  const logo = document.querySelector('.logo'); // Adjust if necessary
 
-function ToggleMenu() {
-  if (menuItems.style.display === 'block' || menuItems.style.display === '') {
-    // Hide the menu items and revert the menu bar
-    menuItems.style.display = 'none';
-    menuBar.classList.remove('open');
-    nav.style.height = '10%' // Remove cross
-  } else {
-    // Show the menu items and center them
-    menuItems.style.display = 'block';
-    nav.style.display = 'flex';
-    nav.style.height = '120%';
-    nav.style.alignItems = 'center';
-    nav.style.justifyContent = 'center';
-    menuBar.classList.add('open'); // Add cross
+  // Toggle Menu Function
+  function ToggleMenu() {
+    document.body.classList.toggle('menu-open');
+    menuItems.classList.toggle('open'); // Toggle the 'open' class on menu items
+    
+    // Toggle visibility of menu bar and close icon
+    if (menuItems.classList.contains('open')) {
+      menuBar.style.display = 'none';
+      closeMenu.style.display = 'block';
+    } else {
+      menuBar.style.display = 'block';
+      closeMenu.style.display = 'none';
+    }
+    logo.style.display = 'block'; // Ensure logo is visible
   }
-}
 
+  // Close the menu when clicking outside of it
+  function closeMenuOnClickOutside(event) {
+    if (document.body.classList.contains('menu-open') &&
+        !menuItems.contains(event.target) &&
+        !menuBar.contains(event.target) &&
+        !closeMenu.contains(event.target) &&
+        !logo.contains(event.target)) {
+      ToggleMenu();
+    }
+  }
+
+  function setupMenu() {
+    // Add event listeners if viewport height is 750px or less
+    if (window.innerHeight <= 1050) {
+      menuBar.addEventListener('click', ToggleMenu);
+      closeMenu.addEventListener('click', ToggleMenu);
+      document.addEventListener('click', closeMenuOnClickOutside);
+    } else {
+      // Remove event listeners if viewport height is more than 750px
+      menuBar.removeEventListener('click', ToggleMenu);
+      closeMenu.removeEventListener('click', ToggleMenu);
+      document.removeEventListener('click', closeMenuOnClickOutside);
+    }
+  }
+
+  // Initial setup
+  setupMenu();
+
+  // Update setup on resize
+  window.addEventListener('resize', setupMenu);
+});
+
+// Typed.js Configuration (no changes needed here)
 var typed = new Typed(".text", {
-  strings: ["Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer","Web Developer","Graphic Designer","UI/UX Designer","Digital Marketer"],
+  strings: ["Web Developer", "Graphic Designer", "UI/UX Designer", "Digital Marketer"],
   typeSpeed: 150,
   backSpeed: 150,
-  looped: true
-})
+  loop: true
+});
 
+// Page Loader Logic
 document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("load", function() {
     const loader = document.getElementById('loader');
@@ -35,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// Scroll-Based Icon Position Update
 window.addEventListener('scroll', updateIconPosition);
 window.addEventListener('load', updateIconPosition);
 
