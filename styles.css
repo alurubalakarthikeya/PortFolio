@@ -220,7 +220,7 @@ img {
   width: 130px;
   border-radius: 80px;
   border: var(--main-blue) solid 5px;
-  margin: 12.5vh 0;
+  margin: 11vh 0;
   transition: 0.3s ease-out;
 }
 
