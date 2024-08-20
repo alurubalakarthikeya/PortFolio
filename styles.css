@@ -709,6 +709,7 @@ footer i {
 .navigator i {
   position: absolute; 
   transition: top 0.4s ease;
+  padding-top: 6px;
 }
 
 

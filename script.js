@@ -35,22 +35,29 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('scroll', handleScrollEnd);
+window.addEventListener('scroll', updateIconPosition);
+window.addEventListener('load', updateIconPosition);
+
 function updateIconPosition() {
   const buttonContainer = document.querySelector('.navigator');
   const icon = buttonContainer.querySelector('i');
-  const documentHeight = document.documentElement.scrollHeight; 
+  
+  if (!buttonContainer || !icon) return; // Ensure elements exist
+
+  const documentHeight = document.documentElement.scrollHeight;
   const viewportHeight = window.innerHeight;
-  const scrollPosition = window.scrollY; 
+  const scrollPosition = window.scrollY;
+  
   const scrollPercentage = (scrollPosition / (documentHeight - viewportHeight)) * 100;
+  
   const containerHeight = buttonContainer.offsetHeight;
   const iconHeight = icon.offsetHeight;
+  
   const maxPosition = containerHeight - iconHeight;
-  const newPosition = (scrollPercentage / 100) * maxPosition; 
+  const newPosition = (scrollPercentage / 100) * maxPosition;
+  
   icon.style.top = `${newPosition}px`;
 }
-document.addEventListener('scroll', updateIconPosition);
-window.addEventListener('load', updateIconPosition);
+
 
 
