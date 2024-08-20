@@ -73,7 +73,8 @@ h2 {
 }
 
 h3 {
-  font-size: 3vh;
+  font-size: 2.7vh;
+  font-weight: 600;
 }
 
 ul {
@@ -219,7 +220,7 @@ img {
   width: 130px;
   border-radius: 80px;
   border: var(--main-blue) solid 5px;
-  margin: 50px 0;
+  margin: 13vh 0;
   transition: 0.3s ease-out;
 }
 
