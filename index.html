@@ -15,6 +15,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,100;1,300&display=swap" rel="stylesheet">
   <title>Home | Karthikeya</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+  <!--Animation js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <!--Animation js-->
 </head>
 <body translate="no" >
  <!--Loader animation-->
@@ -100,44 +104,49 @@
   </ul> </span><br>
   <h1 id="Skill">My <span class="heading">Skills</span></h1><br>
   <div id="Buttons">
-    <button class="skill"><p><img src="photos/html5.png" alt="html logo" title="HTML5">&#9733;&#9733;&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/css3.png" alt="css logo" title="CSS3">&#9733;&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/javascript.png" alt="JavaScript" title="JavaScript">&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/bootstrap.png" alt="Bootstrap" title="Bootstrap">&#9733;&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/jquery.png" alt="jQuery" title="jQuery">&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/python.png" alt="python logo" title="Python">&#9733;&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/c.png" alt="C logo" title="C">&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/design.png" alt="Design" title="Graphic Design">&#9733;&#9733;&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/cpp.png" alt="C++ logo" title="C++">&#9733;&#9733;</p></button>
-    <button class="skill"><p><img src="photos/marketing.png" alt="Marketing" title="Marketing">&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/html5.png" alt="html logo" title="HTML5">&#9733;&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/css3.png" alt="css logo" title="CSS3">&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/javascript.png" alt="JavaScript" title="JavaScript">&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/bootstrap.png" alt="Bootstrap" title="Bootstrap">&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/jquery.png" alt="jQuery" title="jQuery">&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/python.png" alt="python logo" title="Python">&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/c.png" alt="C logo" title="C">&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/design.png" alt="Design" title="Graphic Design">&#9733;&#9733;&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/cpp.png" alt="C++ logo" title="C++">&#9733;&#9733;</p></button>
+    <button class="skill fade-in-up-target"><p><img src="photos/marketing.png" alt="Marketing" title="Marketing">&#9733;&#9733;&#9733;&#9733;</p></button>
   </div><br><br>
   <h1 style="font-size: 5vh;">My<span class="heading"> Journey</span></h1><br><br><br>
-  <div class="timeline">
-    <div class="container left">
+  <div class="timeline ">
+    <div class="container left fade-in-right-target">
       <div class="content">
         <h3>Freelance (2021-2022)</h3>
-        <p>Role: Web Developer, Web Designer</p><br>
-        <p class="hehe">Learning web development concepts has been immensely rewarding for me. Transitioning to real-world projects, I've been able to offer frontend development services to clients. It's been an exciting journey that's not only solidifying my understanding but also building my portfolio and reputation in the field.</p><br>
+        <p>Role: Web Developer, Web Designer</p>
         <p>Skills: HTML, CSS</p><br>
         <a class="page-buttons" href="https://www.fiverr.com/" target="_blank">About Fiverr</a>
       </div>
     </div>
-    <div class="container right">
+    <div class="container right fade-in-left-target">
       <div class="content">
         <h3>Klassen InfoTech (2022-2023)</h3>
-        <p>Role: Front-End Web Developer, CTO</p><br>
-        <p class="hehe"> During my freelance stint, I had the opportunity to connect with the CEO of a startup who reached out to me via LinkedIn. They sought my expertise as a frontend web developer for their company, marking the beginning of an exciting journey. Since then, I've been immersing myself in new tools for graphic design and web technologies, constantly expanding my skill set to meet the demands of this dynamic field.</p><br>
+        <p>Role: Front-End Web Developer, CTO</p>
         <p>Skills: HTML, CSS, JavaScript, Bootstrap, jQuery</p><br>
         <a class="page-buttons" href="https://www.linkedin.com/company/89564104/" target="_blank">About Company</a>
       </div>
     </div>
-    <div class="container left">
+    <div class="container left fade-in-right-target">
       <div class="content">
         <h3>GrowItRapid (2023-current)</h3>
-        <p>Role: Digital Marketer, LinkedIn Growth Architect</p><br>
-        <p class="hehe">My active presence on LinkedIn since 2021 has garnered a solid following of 15k followers, opening doors to exciting opportunities. Leveraging this platform, I've been able to offer services to startups and beginners, aiding them in accelerating their journey through emerging digital strategies. By providing tailored solutions, I aim to amplify their exposure in the competitive market, empowering startups to thrive and beginners to excel in the digital landscape.</p><br>
+        <p>Role: Digital Marketer, LinkedIn Growth Architect</p>
         <p>Skills: Digital Marketing, Communication</p><br>
         <a class="page-buttons" href="https://www.linkedin.com/company/growitrapid/" target="_blank">About Company</a>
+      </div>
+    </div>
+    <div class="container right fade-in-left-target">
+      <div class="content">
+        <h3>Klassen InfoTech (2022-2023)</h3>
+        <p>Role: Front-End Web Developer, CTO</p>
+        <p>Skills: HTML, CSS, JavaScript, Bootstrap, jQuery</p><br>
+        <a class="page-buttons" href="https://www.linkedin.com/company/89564104/" target="_blank">About Company</a>
       </div>
     </div>
     <br><br>
@@ -146,8 +155,8 @@
 <!-- START OF PROJECTS SECTION -->
 <section id="projects" class="projects-section">
   <h2 class="projects-section-header" style="font-size: 5vh;">My <span class="heading"> Projects</span></h2><br>
-  <div class="projects-grid">
-    <a href="https://alurubalakarthikeya.github.io/miniminds.io" class="project project-tile grid-a">
+  <div class="projects-grid ">
+    <a href="https://alurubalakarthikeya.github.io/miniminds.io" class="project project-tile grid-a fade-in-right-target">
       <img class="project-image" src="photos/miniminds.png" alt="WhatsApp project"/>
         <p class="project-title">
           <span class="code">&lt;</span>
@@ -156,7 +165,7 @@
           <span class="hover-info">Mini Minds is a website made for children which brings a new set of rules of learning, where learning in made easy</span>
         </p>
     </a>
-    <a href="https://alurubalakarthikeya.github.io/project-1/" class="project project-tile grid-b">
+    <a href="https://alurubalakarthikeya.github.io/project-1/" class="project project-tile grid-b fade-in-right-target">
       <img class="project-image" src="photos/klassen.png" alt="StartUp project"/>
         <p class="project-title">
           <span class="code">&lt;</span>
@@ -164,7 +173,7 @@
           <span class="code">&#47;&gt;</span>
         </p>
     </a>
-    <a href="https://alurubalakarthikeya.github.io/bootstrap-web/" class="project project-tile grid-c">
+    <a href="https://alurubalakarthikeya.github.io/bootstrap-web/" class="project project-tile grid-c fade-in-right-target">
       <img class="project-image" src="photos/bootstrap-web.png" alt="bootstrap-website"/>
         <p class="project-title">
           <span class="code">&lt;</span>

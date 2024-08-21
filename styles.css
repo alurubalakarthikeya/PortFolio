@@ -104,7 +104,7 @@ img {
   width: 100%;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  z-index: 200;
+  z-index: 20000;
 }
 
 /* Logo container (flex: 1 makes it take up available space) */
@@ -510,6 +510,7 @@ button > img {
   position: relative;
   background-color: inherit;
   width: 50%;
+  z-index: 1000;
 }
 
 /* The circles on the timeline */
@@ -588,7 +589,7 @@ button > img {
 @media screen and (max-width: 600px) {
 /* Place the timelime to the left */
   .timeline::after {
-    left: 31px;
+    left: 28px;
   }
 
 /* Full-width containers */
