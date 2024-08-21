@@ -629,7 +629,7 @@ button > img {
 
 .contact-section {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   padding: 30vh 2rem;
   background: url(photos/footer.png);
 }
