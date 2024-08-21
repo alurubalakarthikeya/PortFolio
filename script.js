@@ -111,7 +111,7 @@ gsap.utils.toArray('.fade-in-up-target').forEach(el => {
       scrollTrigger: {
         trigger: el,
         start: 'top 95%',
-        end: 'bottom 10%',
+        end: 'bottom 50%',
         scrub: true
       }
     }
