@@ -459,6 +459,10 @@ button > img {
   border: var(--main-blue) solid 3px;
 }
 
+.grid-d {
+  border: var(--main-blue) solid 3px;
+}
+
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
