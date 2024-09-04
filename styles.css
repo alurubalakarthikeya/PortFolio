@@ -48,13 +48,13 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem; /* 18px */
-  font-weight: 400;
   line-height: 1.4;
   color: var(--main-white);
   background-color: black;
   text-align: justify;
   overflow-x: none;
   z-index: 100;
+  font-weight: 510;
 }
 
 h1,
@@ -281,9 +281,9 @@ ul {
   background-color: var(--main-white);
   border: var(--main-white) solid 3px;
   border-radius: 10px;
-  font-size: 2vh;
-  padding: 7px;
-  margin-bottom: 10px;
+  font-size: 1.5vh;
+  padding: 10px;
+  margin: 10px;
   transition: 0.5s;
 }
 
@@ -334,7 +334,8 @@ ul {
   }
 
   #menu-items.open {
-    transition: 1s;
+    transition: 1s ease;
+    transform: translateX(100%);
     display: block;
     display: flex;
     align-items: center;
@@ -583,6 +584,10 @@ button > img {
   position: relative;
   border-radius: 6px;
   text-align: left;
+}
+
+.content > a {
+  margin: 10px;
 }
 
 .content > .hehe {
