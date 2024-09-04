@@ -54,7 +54,7 @@ body {
   text-align: justify;
   overflow-x: none;
   z-index: 100;
-  font-weight: 510;
+  font-weight: 600;
 }
 
 h1,
@@ -318,9 +318,10 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.8); 
     flex-direction: column;
-    transition: 1s;
+    transform: translateX(10%);
+    transition: transform 1s;
   }
 
   #menu-items {
@@ -334,8 +335,7 @@ ul {
   }
 
   #menu-items.open {
-    transition: 1s ease;
-    transform: translateX(100%);
+    transform: translateX(0);
     display: block;
     display: flex;
     align-items: center;
@@ -409,7 +409,7 @@ button > img {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 }
 
@@ -430,7 +430,6 @@ button > img {
 }
 
 .project-image {
-  height: calc(100% - 6.8rem);
   width: 100%;
   object-fit: cover;
 }
