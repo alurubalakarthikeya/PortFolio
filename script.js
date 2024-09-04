@@ -14,11 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuItems.classList.contains('open')) {
       menuBar.style.display = 'none';
       closeMenu.style.display = 'block';
+      closeMenu.style.zIndex = '9990000000000000000';
     } else {
       menuBar.style.display = 'block';
       closeMenu.style.display = 'none';
     }
     logo.style.display = 'block'; // Ensure logo is visible
+    logo.style.zIndex = '10000000000';
   }
 
   // Close the menu when clicking outside of it
@@ -150,8 +152,18 @@ gsap.utils.toArray('.fade-in-right-target').forEach(el => {
     }
   );
 });
+
+gsap.from(".line-2", {
+  scrollTrigger: {
+    trigger: ".orange",
+    scrub: true,
+    pin: true,
+    start: "top top",
+    end: "+=100%"
+  },
+  scaleX: 0, 
+  transformOrigin: "left center", 
+  ease: "none"
+});
 });
 /*Scroll Animation*/
-
-
-
