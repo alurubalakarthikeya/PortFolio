@@ -8,23 +8,27 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const pageMessages: Record<string, string[]> = {
     "/": [
-        "Welcome to my digital space",
-        "Try toggling the theme",
-        "Scroll down to explore my work",
+        "Hello, Welcome !!",
+        "Toggle the theme",
+        "There's a secret page, can you find it?"
     ],
     "/about": [
         "Check out my GitHub stats below",
         "My experience section has details",
         "Scroll down for education info",
+        "What's that???",
+        "ServiceNow role please...",
     ],
     "/work": [
         "Click any card for full details",
         "Each project has its own page",
-        "Try the star ratings on projects",
+        "Star ratings on projects module is under dev...",
+        "Easter is waiting for you",
     ],
     "/contact": [
         "Drop me a message anytime",
         "Connect with me on socials",
+        "There's a secret page, did you find it?"
     ],
 };
 
