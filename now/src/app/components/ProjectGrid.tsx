@@ -18,6 +18,7 @@ type PhoneMockupProps = {
   imageClassName?: string;
   topGapPx?: number;
   frameClassName?: string;
+  mockupColor?: 'default' | 'white' | 'greenish';
 };
 
 type ProjectKey = 'calgpa' | 'zephra' | 'aether' | 'campusnow' | 'miniminds' | 'carsio' | 'roledoc' | 'textotest' | 'cardone';
@@ -85,9 +86,19 @@ function BracketButton({ onClick, label, expanded, className = '', iconClassName
   );
 }
 
-function PhoneMockup({ screenshotSrc, alt, accentClassName, topVisibleImageOnly = false, imageClassName = '', topGapPx = 0, frameClassName = '' }: PhoneMockupProps) {
+function PhoneMockup({ screenshotSrc, alt, accentClassName, topVisibleImageOnly = false, imageClassName = '', topGapPx = 0, frameClassName = '', mockupColor = 'default' }: PhoneMockupProps) {
+  let bgColor = 'bg-[var(--site-card-bg-strong)]';
+  let borderClass = '';
+  if (mockupColor === 'white') {
+    bgColor = 'bg-white';
+    borderClass = 'border-[5px] border-[#f3f4f6] shadow-xl';
+  } else if (mockupColor === 'greenish') {
+    bgColor = 'bg-[#ecfdf5]';
+    borderClass = 'border-[5px] border-[#a7f3d0] shadow-xl';
+  }
+
   return (
-    <div className={`relative h-full w-full overflow-hidden bg-[var(--site-card-bg-strong)] rounded-[2.1rem] ${frameClassName}`}>
+    <div className={`relative h-full w-full overflow-hidden ${bgColor} ${borderClass} rounded-[2.1rem] ${frameClassName}`}>
       {screenshotSrc ? (
         topVisibleImageOnly ? (
           <div className="h-full w-full flex flex-col">
@@ -542,13 +553,13 @@ export default function ProjectGrid() {
         viewport={{ once: true, margin: '-24px' }}
         transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1], delay }}
         className={`relative h-full min-h-[176px] rounded-[1.7rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-lg px-4 py-4 md:px-5 md:py-4 flex items-center gap-3 shadow-[0_18px_45px_rgba(0,0,0,0.15)] cursor-pointer ${className}`}
-        onClick={() => setActiveProject(projectKey)}
+        onClick={() => window.location.href = `/project/${projectKey}`}
         role="button"
         tabIndex={0}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            setActiveProject(projectKey);
+            window.location.href = `/project/${projectKey}`;
           }
         }}
       >
@@ -571,6 +582,7 @@ export default function ProjectGrid() {
 
   const renderVerticalCard = (projectKey: ProjectKey, className = '', delay = 0) => {
     const project = popupProjects[projectKey];
+    const hasBottomMockup = projectKey === 'zephra' || projectKey === 'miniminds';
 
     return (
       <motion.div
@@ -580,18 +592,18 @@ export default function ProjectGrid() {
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: '-24px' }}
         transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1], delay }}
-        className={`relative h-full min-h-[380px] rounded-[1.7rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-lg p-5 md:p-6 flex flex-col gap-4 shadow-[0_18px_45px_rgba(0,0,0,0.15)] cursor-pointer ${className}`}
-        onClick={() => setActiveProject(projectKey)}
+        className={`relative h-full min-h-[380px] rounded-[1.7rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-lg p-5 md:p-6 flex flex-col gap-4 shadow-[0_18px_45px_rgba(0,0,0,0.15)] cursor-pointer overflow-hidden ${className}`}
+        onClick={() => window.location.href = `/project/${projectKey}`}
         role="button"
         tabIndex={0}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            setActiveProject(projectKey);
+            window.location.href = `/project/${projectKey}`;
           }
         }}
       >
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start justify-between gap-3 relative z-10">
           <BracketButton
             onClick={(event) => toggleExpand(projectKey, event)}
             label={`Expand ${project.name} card`}
@@ -599,7 +611,7 @@ export default function ProjectGrid() {
           />
         </div>
 
-        <div className="flex-1 flex flex-col justify-center">
+        <div className={`flex-1 flex flex-col relative z-10 ${hasBottomMockup ? 'justify-start md:pb-[40%]' : 'justify-center'}`}>
           <p className="inline-flex w-fit text-[#10b981] font-bold text-[10px] tracking-[0.14em] uppercase bg-[#10b981]/10 px-3 py-1.5 rounded-full mb-3">
             {project.badge}
           </p>
@@ -608,7 +620,20 @@ export default function ProjectGrid() {
           {renderProjectDetails(projectKey, true)}
         </div>
 
-        <div className="text-white">{renderRatingSummary(projectKey)}</div>
+        <div className="text-white relative z-10">{renderRatingSummary(projectKey)}</div>
+
+        {hasBottomMockup && (
+          <div className="hidden md:block absolute -bottom-[15%] left-1/2 -translate-x-1/2 w-[65%] h-[60%] z-0 max-w-[240px]">
+            <PhoneMockup
+              mockupColor="greenish"
+              screenshotSrc={screenshots[projectKey]}
+              alt={`${project.name} preview`}
+              accentClassName={project.accentClassName}
+              topVisibleImageOnly
+              frameClassName="rounded-[1.4rem]"
+            />
+          </div>
+        )}
       </motion.div>
     );
   };
@@ -628,13 +653,13 @@ export default function ProjectGrid() {
         viewport={{ once: true, margin: '-36px' }}
         transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1], delay }}
         className={`relative h-full min-h-[320px] overflow-hidden rounded-[2.35rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-lg p-5 md:p-6 shadow-[0_22px_54px_rgba(0,0,0,0.2)] cursor-pointer ${className}`}
-        onClick={() => setActiveProject(projectKey)}
+        onClick={() => window.location.href = `/project/${projectKey}`}
         role="button"
         tabIndex={0}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            setActiveProject(projectKey);
+            window.location.href = `/project/${projectKey}`;
           }
         }}
       >
@@ -661,14 +686,17 @@ export default function ProjectGrid() {
           </div>
 
           {showMockup ? (
-            <div className={`relative min-h-[220px] rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] ${isAether ? 'order-1 md:order-1' : 'order-2'}`}>
-              <PhoneMockup
-                screenshotSrc={screenshots[projectKey] || undefined}
-                alt={`${project.name} preview`}
-                accentClassName={project.accentClassName}
-                topVisibleImageOnly
-                frameClassName="rounded-[1.4rem]"
-              />
+            <div className={`relative flex items-center justify-center ${isAether ? 'order-1 md:order-1' : 'order-2'}`}>
+              <div className={`w-[140px] md:w-[170px] h-[280px] md:h-[340px] relative transition-transform hover:rotate-0 duration-500 ${isAether ? 'rotate-[-4deg]' : 'rotate-[4deg]'}`}>
+                <PhoneMockup
+                  mockupColor="white"
+                  screenshotSrc={screenshots[projectKey] || undefined}
+                  alt={`${project.name} preview`}
+                  accentClassName={project.accentClassName}
+                  topVisibleImageOnly
+                  frameClassName="rounded-[1.4rem]"
+                />
+              </div>
             </div>
           ) : null}
         </div>

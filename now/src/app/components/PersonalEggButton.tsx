@@ -61,7 +61,7 @@ export default function PersonalEggButton() {
       aria-label="Open personal easter egg page"
       title="Personal easter egg"
       href="/easter"
-      className="fixed z-[30] block transition-transform duration-300 hover:scale-110"
+      className="absolute z-[30] block transition-transform duration-300 hover:scale-110"
       style={{ top: position.top, left: position.left }}
     >
       <Image

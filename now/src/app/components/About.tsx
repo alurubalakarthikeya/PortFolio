@@ -498,11 +498,10 @@ export default function About() {
                         <h3 className="text-3xl md:text-4xl font-extrabold font-doto text-[var(--text-heading)] mb-6">Experience</h3>
                         <div className="space-y-4">
                             {journey.map((item, index) => (
-                                <div key={item.date} className="relative pl-6">
-                                    <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-[#10b981] to-[#059669]" />
-                                    <p className="text-xs tracking-[0.14em] uppercase text-[#10b981] font-bold ml-2">{item.date}</p>
-                                    <h4 className="mt-1 text-xl font-bold text-[var(--text-card)] ml-2">{item.title}</h4>
-                                    <p className="mt-2 text-[var(--text-secondary)] font-medium leading-relaxed ml-2">{item.blurb}</p>
+                                <div key={item.date} className="relative">
+                                    <p className="text-xs tracking-[0.14em] uppercase text-[#10b981] font-bold">{item.date}</p>
+                                    <h4 className="mt-1 text-xl font-bold text-[var(--text-card)]">{item.title}</h4>
+                                    <p className="mt-2 text-[var(--text-secondary)] font-medium leading-relaxed">{item.blurb}</p>
                                     {index < journey.length - 1 ? <div className="mt-4 border-b border-[var(--site-border)]" /> : null}
                                 </div>
                             ))}

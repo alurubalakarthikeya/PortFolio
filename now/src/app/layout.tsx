@@ -14,6 +14,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import MoonButton from "./components/MoonButton";
 import PersonalEggButton from "./components/PersonalEggButton";
 import MusicToggleWrapper from "./components/MusicToggleWrapper";
+import NotificationBubble from "./components/NotificationBubble";
 import logo from "./assets/imgs/logo.png";
 
 const doto = localFont({
@@ -83,6 +84,7 @@ export default function RootLayout({
           <MoonButton />
           <PersonalEggButton />
           <MusicToggleWrapper />
+          <NotificationBubble />
           <div className="flex-1 w-full relative z-10 flex flex-col">
             {children}
           </div>
