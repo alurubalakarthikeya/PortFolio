@@ -35,6 +35,8 @@ const projects: Record<string, any> = {
         workedOn: 'Oct 2024 – Apr 2025',
         domain: 'Education Technology',
         role: 'Full Stack Developer',
+        status: 'Live',
+        version: '2.1',
         stack: ['HTML', 'CSS', 'JavaScript', 'PWA', 'Responsive Design'],
         stats: [
             { label: 'Uptime', value: '99.9%' },
@@ -44,8 +46,9 @@ const projects: Record<string, any> = {
         ],
         highlights: [
             'GPA simulator with dynamic projections',
-            'Course-wise breakdown cards',
+            'Course-wise breakdown cards with visual weighting',
             'Mobile-first, distraction-free design',
+            'Installable as a native-like app via PWA',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -58,6 +61,8 @@ const projects: Record<string, any> = {
         workedOn: 'Oct 2025',
         domain: 'Climate Intelligence',
         role: 'Frontend & AI Developer',
+        status: 'Shipped',
+        version: '1.0',
         stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'FastAPI', 'Python', 'Chart.js'],
         stats: [
             { label: 'Latency', value: '<200ms' },
@@ -69,6 +74,7 @@ const projects: Record<string, any> = {
             'Live map overlays blending forecast signals',
             'Readable AQ metrics with confidence ranges',
             'Communicates science through calm UI patterns',
+            'Real-time data fusion from multiple sources',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -81,6 +87,8 @@ const projects: Record<string, any> = {
         workedOn: 'Mar 2026 – Present',
         domain: 'Artificial Intelligence',
         role: 'Mobile App Developer',
+        status: 'In Dev',
+        version: '0.8',
         stack: ['Flutter', 'Dart', 'AI', 'Behavior Analytics'],
         stats: [
             { label: 'Sync', value: 'Real-time' },
@@ -90,8 +98,9 @@ const projects: Record<string, any> = {
         ],
         highlights: [
             'Daily mood loops with adaptive nudges',
-            'Companion character reacts to engagement',
-            'Unified reflection, planning, and tracking',
+            'Companion character reacts to engagement quality',
+            'Unified reflection, planning, and tracking interface',
+            'On-device AI with cloud sync fallback',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -104,6 +113,8 @@ const projects: Record<string, any> = {
         workedOn: 'Jul 2026 – Present',
         domain: 'Enterprise Software',
         role: 'ServiceNow Developer',
+        status: 'In Dev',
+        version: '1.2',
         stack: ['ServiceNow', 'ServiceNow Studio', 'ITSM', 'Access Control'],
         stats: [
             { label: 'Workflows', value: 'Auto' },
@@ -112,9 +123,10 @@ const projects: Record<string, any> = {
             { label: 'Uptime', value: '99.9%' },
         ],
         highlights: [
-            'Automated academic workflows',
+            'Automated academic and admin workflows',
             'Role-based access control system',
             'Enterprise-grade process automation',
+            'Scalable to thousands of concurrent users',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -127,6 +139,8 @@ const projects: Record<string, any> = {
         workedOn: '2024',
         domain: 'EdTech',
         role: 'Frontend Developer',
+        status: 'Live',
+        version: '1.5',
         stack: ['React', 'TypeScript', 'Tailwind CSS'],
         stats: [
             { label: 'Retention', value: '85%+' },
@@ -135,9 +149,10 @@ const projects: Record<string, any> = {
             { label: 'Modules', value: '20+' },
         ],
         highlights: [
-            'Interactive mini games for learning',
+            'Interactive mini games for active learning',
             'Reward systems that encourage progress',
             'Child-friendly, accessible UI design',
+            'Adaptive difficulty based on performance',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -150,6 +165,8 @@ const projects: Record<string, any> = {
         workedOn: 'May 2025',
         domain: 'Inventory Management',
         role: 'Full Stack Developer',
+        status: 'Shipped',
+        version: '1.0',
         stack: ['HTML', 'CSS', 'Node.js', 'Express', 'SQL'],
         stats: [
             { label: 'Database', value: 'SQL' },
@@ -159,8 +176,9 @@ const projects: Record<string, any> = {
         ],
         highlights: [
             'SQL-backed inventory management',
-            'Secure authentication and sessions',
+            'Secure authentication and session handling',
             'Responsive dealership dashboard',
+            'Full CRUD operations with validation',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -173,6 +191,8 @@ const projects: Record<string, any> = {
         workedOn: 'Jul 2025 – Aug 2025',
         domain: 'Artificial Intelligence',
         role: 'AI Engineer',
+        status: 'Shipped',
+        version: '1.0',
         stack: ['React', 'FastAPI', 'Python', 'FAISS', 'Mistral'],
         stats: [
             { label: 'Retrieval', value: '<1s' },
@@ -182,8 +202,9 @@ const projects: Record<string, any> = {
         ],
         highlights: [
             'Transforms documents into conversational agents',
-            'Customizable response personas',
-            'Multi-format document ingestion',
+            'Customizable response personas for different use cases',
+            'Multi-format document ingestion pipeline',
+            'Vector search powered by FAISS',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -196,6 +217,8 @@ const projects: Record<string, any> = {
         workedOn: '2026',
         domain: 'Educational AI',
         role: 'AI Product Developer',
+        status: 'Live',
+        version: '1.1',
         stack: ['Next.js', 'TypeScript', 'LLMs', 'Prompt Engineering'],
         stats: [
             { label: 'Generation', value: 'Dynamic' },
@@ -206,7 +229,8 @@ const projects: Record<string, any> = {
         highlights: [
             'Context-aware question generation',
             'LLM-powered assessment creation',
-            'Export to multiple formats',
+            'Export to multiple formats including PDF',
+            'Fine-tuned prompt engineering pipeline',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -219,6 +243,8 @@ const projects: Record<string, any> = {
         workedOn: 'Apr 2025 – May 2025',
         domain: 'Productivity',
         role: 'Full Stack Developer',
+        status: 'Shipped',
+        version: '1.0',
         stack: ['Electron', 'Spring Boot', 'SQL', 'Habitica API'],
         stats: [
             { label: 'Streaks', value: 'Tracked' },
@@ -228,8 +254,9 @@ const projects: Record<string, any> = {
         ],
         highlights: [
             'Streak tracking with visual analytics',
-            'Habitica API integration',
-            'Gamification-driven consistency',
+            'Habitica API integration for cross-platform sync',
+            'Gamification-driven consistency mechanics',
+            'Desktop app built with Electron',
         ],
         repoUrl: '#',
         liveUrl: '#',
@@ -250,7 +277,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
     return (
         <div className="relative min-h-screen bg-[var(--site-bg)] overflow-hidden">
             {/* Background glow */}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(16,185,129,0.12),transparent_70%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(16,185,129,0.10),transparent_70%)]" />
 
             {/* Back button */}
             <motion.nav
@@ -268,33 +295,43 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 </Link>
             </motion.nav>
 
-            <main className="relative z-10 px-4 md:px-8 pb-20 max-w-6xl mx-auto">
+            <main className="relative z-10 px-4 md:px-8 pb-24 max-w-6xl mx-auto">
 
                 {/* ── Hero Section ── */}
                 <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-                    className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                    className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-5 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden"
                 >
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center">
                         {/* Text Side */}
                         <div className="flex-1 min-w-0">
-                            <span className="inline-flex px-3 py-1 rounded-full text-[10px] tracking-[0.14em] uppercase font-bold text-[#10b981] bg-[#10b981]/10 border border-[#10b981]/20">
-                                {project.badge}
-                            </span>
-                            <h1 className="mt-4 text-4xl md:text-6xl font-black font-doto text-[var(--text-heading)] leading-[1.1]">
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className="inline-flex px-3 py-1 rounded-full text-[10px] tracking-[0.14em] uppercase font-bold text-[#10b981] bg-[#10b981]/10 border border-[#10b981]/20">
+                                    {project.badge}
+                                </span>
+                                <span className="inline-flex px-3 py-1 rounded-full text-[10px] tracking-[0.14em] uppercase font-bold text-[var(--text-muted)] bg-[var(--site-card-bg-strong)] border border-[var(--site-border)]">
+                                    v{project.version}
+                                </span>
+                                <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] tracking-[0.14em] uppercase font-bold border ${project.status === 'Live' || project.status === 'Shipped' ? 'text-[#10b981] bg-[#10b981]/10 border-[#10b981]/20' : 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20'}`}>
+                                    <span className={`w-1.5 h-1.5 rounded-full ${project.status === 'Live' || project.status === 'Shipped' ? 'bg-[#10b981]' : 'bg-yellow-400'} animate-pulse`} />
+                                    {project.status}
+                                </span>
+                            </div>
+
+                            <h1 className="mt-4 text-4xl md:text-5xl font-black font-doto text-[var(--text-heading)] leading-[1.1]">
                                 {project.name}
                             </h1>
-                            <p className="mt-4 text-base md:text-lg text-[var(--text-secondary)] leading-relaxed font-medium max-w-xl">
+                            <p className="mt-3 text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-medium max-w-xl">
                                 {project.description}
                             </p>
-                            <div className="mt-6 flex flex-wrap gap-3">
+                            <div className="mt-5 flex flex-wrap gap-3">
                                 <a
                                     href={project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#10b981] text-white text-sm font-bold transition-transform hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(16,185,129,0.3)]"
+                                    className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#10b981] text-white text-sm font-bold transition-transform hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(16,185,129,0.25)]"
                                 >
                                     Launch
                                     <span className="material-symbols-outlined text-[1rem] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
@@ -303,17 +340,17 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                                     href={project.repoUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] text-[var(--text-secondary)] text-sm font-bold transition-colors hover:text-white"
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] text-[var(--text-secondary)] text-sm font-bold transition-colors hover:text-[var(--text-heading)]"
                                 >
                                     Source Code
                                 </a>
                             </div>
                         </div>
 
-                        {/* Image Side */}
+                        {/* Image Side — half-visible on mobile, full on desktop */}
                         {image && (
-                            <div className={`shrink-0 ${isMobileApp ? 'w-[160px] md:w-[200px]' : 'w-full lg:w-[45%]'}`}>
-                                <div className={`relative overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.35)] ${isMobileApp ? 'rounded-[2rem] border-[6px] border-[var(--site-border)] aspect-[9/19]' : 'rounded-2xl border border-[var(--site-border)] aspect-[16/10]'}`}>
+                            <div className={`relative shrink-0 overflow-visible ${isMobileApp ? 'w-[180px] md:w-[200px] h-[200px] md:h-auto' : 'w-full lg:w-[45%]'}`}>
+                                <div className={`relative overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.35)] ${isMobileApp ? 'rounded-[2rem] border-[6px] border-[var(--site-border)] aspect-[9/19] translate-y-[30%] md:translate-y-0' : 'rounded-2xl border border-[var(--site-border)] aspect-[16/10]'}`}>
                                     <Image
                                         src={image}
                                         alt={`${project.name} interface`}
@@ -332,49 +369,50 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                    className="mt-6 rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                    className="mt-5 rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-5 md:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
                 >
-                    <div className="flex items-center gap-2 mb-6">
+                    <div className="flex items-center gap-2 mb-5">
                         <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-                        <h2 className="text-xs tracking-[0.16em] uppercase font-black text-[#10b981]/80">Project Telemetry</h2>
+                        <h2 className="text-[10px] tracking-[0.16em] uppercase font-black text-[#10b981]/80">Project Telemetry</h2>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {project.stats.map((stat: any, i: number) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.2 + i * 0.08, duration: 0.35 }}
-                                className="relative rounded-[1.2rem] border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] p-4 md:p-5 overflow-hidden group"
+                                className="relative rounded-[1rem] border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] p-4 overflow-hidden group"
                             >
-                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.08),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <p className="text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)] font-black">{stat.label}</p>
-                                <p className="mt-2 text-xl md:text-2xl font-doto font-black text-white">{stat.value}</p>
+                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.06),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <p className="text-[9px] uppercase tracking-[0.16em] text-[#10b981] font-black">{stat.label}</p>
+                                <p className="mt-1.5 text-xl md:text-2xl font-doto font-black text-[var(--text-heading)]">{stat.value}</p>
                             </motion.div>
                         ))}
                     </div>
                 </motion.section>
 
                 {/* ── Info Grid ── */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* Meta Cards */}
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-                        className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                        className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
                     >
-                        <h2 className="text-xs tracking-[0.16em] uppercase font-black text-[var(--text-muted)] mb-5">Project Info</h2>
-                        <div className="space-y-3">
+                        <h2 className="text-[10px] tracking-[0.16em] uppercase font-black text-[#10b981]/80 mb-4">Project Info</h2>
+                        <div className="space-y-2.5">
                             {[
                                 { label: 'Domain', value: project.domain },
                                 { label: 'Role', value: project.role },
                                 { label: 'Timeline', value: project.workedOn },
+                                { label: 'Status', value: project.status },
                             ].map((item) => (
                                 <div key={item.label} className="flex items-center justify-between rounded-xl border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] px-4 py-3">
                                     <span className="text-[10px] uppercase tracking-[0.14em] text-[#10b981] font-bold">{item.label}</span>
-                                    <span className="text-sm font-bold text-white">{item.value}</span>
+                                    <span className="text-sm font-bold text-[var(--text-heading)]">{item.value}</span>
                                 </div>
                             ))}
                         </div>
@@ -385,13 +423,13 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-                        className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                        className="rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
                     >
-                        <h2 className="text-xs tracking-[0.16em] uppercase font-black text-[var(--text-muted)] mb-5">Highlights</h2>
-                        <div className="space-y-3">
+                        <h2 className="text-[10px] tracking-[0.16em] uppercase font-black text-[#10b981]/80 mb-4">Key Highlights</h2>
+                        <div className="space-y-2.5">
                             {project.highlights.map((item: string, i: number) => (
                                 <div key={i} className="flex items-start gap-3 rounded-xl border border-[var(--site-border)] bg-[var(--site-card-bg-strong)] px-4 py-3">
-                                    <span className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0" />
+                                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0" />
                                     <span className="text-sm text-[var(--text-secondary)] font-medium leading-relaxed">{item}</span>
                                 </div>
                             ))}
@@ -404,9 +442,9 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-                    className="mt-6 rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                    className="mt-5 rounded-[1.8rem] border border-[var(--site-border)] bg-[var(--site-card-bg)] backdrop-blur-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
                 >
-                    <h2 className="text-xs tracking-[0.16em] uppercase font-black text-[var(--text-muted)] mb-5">Tech Stack</h2>
+                    <h2 className="text-[10px] tracking-[0.16em] uppercase font-black text-[#10b981]/80 mb-4">Tech Stack</h2>
                     <div className="flex flex-wrap gap-2.5">
                         {project.stack.map((tech: string) => (
                             <span

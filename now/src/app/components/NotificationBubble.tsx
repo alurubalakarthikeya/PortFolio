@@ -6,60 +6,65 @@ import { usePathname } from "next/navigation";
 import pixelMe from "../assets/imgs/pixel_me.png";
 import { AnimatePresence, motion } from "framer-motion";
 
+const pageMessages: Record<string, string[]> = {
+    "/": [
+        "Welcome to my digital space",
+        "Try toggling the theme",
+        "Scroll down to explore my work",
+    ],
+    "/about": [
+        "Check out my GitHub stats below",
+        "My experience section has details",
+        "Scroll down for education info",
+    ],
+    "/work": [
+        "Click any card for full details",
+        "Each project has its own page",
+        "Try the star ratings on projects",
+    ],
+    "/contact": [
+        "Drop me a message anytime",
+        "Connect with me on socials",
+    ],
+};
+
+const projectMessages = [
+    "Scroll down for the tech stack",
+    "Check out the project telemetry",
+    "Hit Launch to try it live",
+];
+
 export default function NotificationBubble() {
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState("");
+    const [shown, setShown] = useState<Set<string>>(new Set());
     const pathname = usePathname();
 
     useEffect(() => {
-        // Only show on the home page
-        if (pathname !== "/") {
-            setShow(false);
-            return;
-        }
+        // Reset on route change
+        const timeoutId = setTimeout(() => {
+            let msgs: string[];
 
-        let timeoutId: NodeJS.Timeout;
-
-        // Show initial welcome after a brief delay
-        timeoutId = setTimeout(() => {
-            setMessage("Welcome to my digital space");
-            setShow(true);
-            setTimeout(() => setShow(false), 4500);
-        }, 1500);
-
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight;
-            const winHeight = window.innerHeight;
-            const scrollPercent = scrollY / (docHeight - winHeight);
-
-            if (scrollPercent > 0.3 && scrollPercent < 0.5 && message !== "Pro tip: Everything is glassmorphic.") {
-                setMessage("Pro tip: Everything is glassmorphic.");
-                setShow(true);
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => setShow(false), 4500);
-            } else if (scrollPercent >= 0.5 && scrollPercent < 0.7 && message !== "I leverage automation for quality.") {
-                setMessage("I leverage automation for quality.");
-                setShow(true);
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => setShow(false), 4500);
-            } else if (scrollPercent > 0.8 && message !== "Let's build something epic together.") {
-                setMessage("Let's build something epic together.");
-                setShow(true);
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => setShow(false), 4500);
+            if (pathname.startsWith("/project/")) {
+                msgs = projectMessages;
+            } else {
+                msgs = pageMessages[pathname] || [];
             }
-        };
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
+            // Pick a message NOT yet shown
+            const unseen = msgs.filter((m) => !shown.has(m));
+            if (unseen.length === 0) return;
 
-        return () => {
-            clearTimeout(timeoutId);
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [message, pathname]);
+            const pick = unseen[Math.floor(Math.random() * unseen.length)];
+            setMessage(pick);
+            setShown((prev) => new Set(prev).add(pick));
+            setShow(true);
 
-    if (pathname !== "/") return null;
+            setTimeout(() => setShow(false), 4500);
+        }, 1800);
+
+        return () => clearTimeout(timeoutId);
+    }, [pathname]);
 
     return (
         <AnimatePresence>
@@ -69,10 +74,10 @@ export default function NotificationBubble() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 20, scale: 0.9, filter: "blur(4px)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[999] flex items-center gap-2 bg-[var(--site-surface)]/80 border border-[var(--site-border)] backdrop-blur-xl px-3 py-2 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.12)] cursor-pointer"
+                    className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[999] flex items-center gap-2.5 bg-[var(--site-card-bg)] border border-[var(--site-border)] backdrop-blur-xl px-3.5 py-2 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] cursor-pointer"
                     onClick={() => setShow(false)}
                 >
-                    <div className="relative w-7 h-7 rounded-full border border-white/10 overflow-hidden bg-[var(--site-card-bg-strong)] shrink-0">
+                    <div className="relative w-7 h-7 rounded-full border border-[var(--site-border)] overflow-hidden bg-[var(--site-card-bg-strong)] shrink-0">
                         <Image
                             src={pixelMe}
                             alt="Me"
@@ -81,7 +86,7 @@ export default function NotificationBubble() {
                             sizes="28px"
                         />
                     </div>
-                    <p className="text-xs font-semibold text-[var(--text-secondary)] tracking-wide pr-1">
+                    <p className="text-xs font-semibold text-[var(--text-heading)] tracking-wide pr-1">
                         {message}
                     </p>
                 </motion.div>
