@@ -1,2 +1,0 @@
-Directories in project: [id]
-Did not rename: [id]
