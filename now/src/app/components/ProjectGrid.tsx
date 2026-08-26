@@ -582,7 +582,7 @@ export default function ProjectGrid() {
 
   const renderVerticalCard = (projectKey: ProjectKey, className = '', delay = 0) => {
     const project = popupProjects[projectKey];
-    const hasBottomMockup = projectKey === 'zephra' || projectKey === 'miniminds';
+    const hasBottomMockup = projectKey === 'zephra';
 
     return (
       <motion.div
@@ -728,28 +728,30 @@ export default function ProjectGrid() {
           {renderLandscapeCard('aether', 'min-h-[380px]', 0)}
         </div>
 
-        {/* Row 2: Tall + Medium + Tall */}
+        {/* Row 2: Tall + Compact (zephra spans 2 rows) */}
         <div className="col-span-1 row-span-2">
           {renderVerticalCard('zephra', 'min-h-[380px]', 0.14)}
         </div>
         <div className="col-span-1 row-span-1">
-          {renderVerticalCard('campusnow', 'min-h-[240px]', 0.1)}
-        </div>
-        <div className="col-span-1 row-span-2">
-          {renderVerticalCard('miniminds', 'min-h-[380px]', 0.06)}
+          {renderCompactCard('miniminds', 'min-h-[176px]', 0.06)}
         </div>
 
-        {/* Row 3: Large Feature + Small */}
+        {/* zephra row-span-2: campusnow sits in its lower half */}
+        <div className="col-span-1 row-span-1">
+          {renderCompactCard('campusnow', 'min-h-[176px]', 0.1)}
+        </div>
+
+        {/* roledoc widened to col-span-2, paired with carsio */}
         <div className="col-span-2 row-span-1">
-          {renderLandscapeCard('textotest', 'min-h-[240px]', 0.04)}
+          {renderCompactCard('roledoc', 'min-h-[176px]', 0.18)}
         </div>
         <div className="col-span-1 row-span-1">
           {renderCompactCard('carsio', 'min-h-[176px]', 0.12)}
         </div>
 
-        {/* Row 4: Small + Small + Small */}
-        <div className="col-span-1 row-span-1">
-          {renderCompactCard('roledoc', 'min-h-[176px]', 0.18)}
+        {/* Row 5: Wide feature + Compact */}
+        <div className="col-span-2 row-span-1">
+          {renderLandscapeCard('textotest', 'min-h-[240px]', 0.04)}
         </div>
         <div className="col-span-1 row-span-1">
           {renderCompactCard('cardone', 'min-h-[176px]', 0.12)}
@@ -768,31 +770,26 @@ export default function ProjectGrid() {
           {renderLandscapeCard('aether', 'min-h-[380px]', 0)}
         </div>
 
-        {/* Row 2: Tall + Medium */}
+        {/* Row 2: Tall + Compact (zephra spans 2 rows) */}
         <div className="col-span-1 row-span-2">
           {renderVerticalCard('zephra', 'min-h-[380px]', 0.14)}
         </div>
         <div className="col-span-1 row-span-1">
-          {renderLandscapeCard('campusnow', 'min-h-[240px]', 0.1)}
+          {renderCompactCard('miniminds', 'min-h-[176px]', 0.06)}
         </div>
 
-        {/* Row 3: Tall + Small */}
-        <div className="col-span-1 row-span-2">
-          {renderVerticalCard('miniminds', 'min-h-[380px]', 0.06)}
+        {/* Row 3: Compact (beside zephra lower half) */}
+        <div className="col-span-1 row-span-1">
+          {renderCompactCard('campusnow', 'min-h-[176px]', 0.1)}
+        </div>
+
+        {/* Row 4: Wide roledoc + Compact */}
+        <div className="col-span-1 row-span-1">
+          {renderCompactCard('roledoc', 'min-h-[176px]', 0.18)}
         </div>
         <div className="col-span-1 row-span-1">
           {renderCompactCard('carsio', 'min-h-[176px]', 0.12)}
         </div>
-
-        {/* Row 4: Large Feature + Small */}
-        <div className="col-span-1 row-span-1">
-          {renderLandscapeCard('textotest', 'min-h-[240px]', 0.04)}
-        </div>
-        <div className="col-span-1 row-span-1">
-          {renderCompactCard('roledoc', 'min-h-[176px]', 0.18)}
-        </div>
-
-        {/* Row 5: Small + Small */}
         <div className="col-span-1 row-span-1">
           {renderCompactCard('cardone', 'min-h-[176px]', 0.12)}
         </div>
@@ -801,7 +798,7 @@ export default function ProjectGrid() {
       {/* ── Mobile list ── */}
       <div className="space-y-4 md:hidden">
         {(['aether', 'calgpa', 'zephra', 'miniminds', 'carsio', 'roledoc', 'campusnow', 'textotest', 'cardone'] as ProjectKey[]).map((projectKey, i) => {
-          if (projectKey === 'aether' || projectKey === 'textotest' || projectKey === 'zephra' || projectKey === 'miniminds' || projectKey === 'campusnow') {
+          if (projectKey === 'aether' || projectKey === 'textotest' || projectKey === 'zephra' || projectKey === 'campusnow') {
             return renderVerticalCard(projectKey, 'min-h-[340px]', i * 0.06);
           }
 

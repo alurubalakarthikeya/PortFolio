@@ -64,6 +64,11 @@ export default function NotificationBubble() {
             setShown((prev) => new Set(prev).add(pick));
             setShow(true);
 
+            // Play notification sound
+            const audio = new Audio("/music/notification-sound.mp3");
+            audio.volume = 0.3;
+            audio.play().catch(() => {});
+
             setTimeout(() => setShow(false), 4500);
         }, 1800);
 
@@ -78,7 +83,7 @@ export default function NotificationBubble() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 20, scale: 0.9, filter: "blur(4px)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[999] flex items-center gap-2.5 bg-[var(--site-card-bg)] border border-[var(--site-border)] backdrop-blur-xl px-3.5 py-2 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] cursor-pointer"
+                    className="fixed bottom-32 md:bottom-16 right-4 md:right-8 z-[999] flex items-center gap-2.5 bg-[var(--site-card-bg)] border border-[var(--site-border)] backdrop-blur-xl px-3.5 py-2 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] cursor-pointer"
                     onClick={() => setShow(false)}
                 >
                     <div className="relative w-7 h-7 rounded-full border border-[var(--site-border)] overflow-hidden bg-[var(--site-card-bg-strong)] shrink-0">
