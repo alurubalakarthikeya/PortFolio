@@ -557,3 +557,19 @@ textarea {
 .theme-overlay {
 	background: var(--site-overlay);
 }
+
+/* Standalone Full-screen Retro Easter Egg Game overrides */
+body.game-active {
+	overflow: hidden !important;
+	height: 100vh !important;
+	width: 100vw !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: fixed !important;
+}
+
+body.game-active nav,
+body.game-active button.fixed,
+body.game-active div.fixed {
+	display: none !important;
+}
